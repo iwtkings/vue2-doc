@@ -3,16 +3,15 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="with-v3-banner">
   <head>
     <title>实时 deepstreamHub — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/examples/deepstream.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/examples/deepstream.html">
+    <link rel="alternate" hreflang="x-default" href="https://v2.vuejs.org/v2/examples/deepstream.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/examples/deepstream.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/examples/deepstream.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/examples/deepstream.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/examples/deepstream.html">
@@ -23,28 +22,28 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="实时 deepstreamHub — Vue.js">
     <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
-    <meta property="og:image" content="https://cn.vuejs.org/images/logo.png">
+    <meta property="og:image" content="https://v2.cn.vuejs.org/images/logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="实时 deepstreamHub — Vue.js">
     <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
-    <meta name="twitter:image" content="https://cn.vuejs.org/images/logo.png">
+    <meta name="twitter:image" content="https://v2.cn.vuejs.org/images/logo.png">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/vue2-doc/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/vue2-doc/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/vue2-doc/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/vue2-doc/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/vue2-doc/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/vue2-doc/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/vue2-doc/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/vue2-doc/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/vue2-doc/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/vue2-doc/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/vue2-doc/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/vue2-doc/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/vue2-doc/images/icons/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
-    <link rel="icon" href="/images/logo.svg">
+    <link rel="icon" href="/vue2-doc/images/logo.svg">
 
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -62,11 +61,11 @@
 
     <!-- main page styles -->
     
-<link rel="stylesheet" href="/css/page.css">
+<link rel="stylesheet" href="/vue2-doc/css/page.css">
 
 
     <!-- this needs to be loaded before guide's inline scripts -->
-    <script src="/js/vue.js"></script>
+    <script src="/vue2-doc/js/vue.js"></script>
 
     
 
@@ -75,20 +74,13 @@
       window.PAGE_TYPE = "examples"
     </script>
 
-    <!-- ga -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-46852172-3', 'cn.vuejs.org');
-      ga('send', 'pageview');
-    </script>
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="KTDIHEIJ" defer></script>
+    <!-- / Fathom -->
 
     <!-- vimeo analytics -->
     <!-- <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script> -->
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/vue2-doc/atom.xml" title="Vue.js" type="application/atom+xml">
 </head>
   <body class="docs">
 
@@ -100,14 +92,16 @@
     </div>
     <div>
   <div id="v3-banner">
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <span class="hidden-sm">您在浏览的是 v2.x 及更早版本的文档。</span
-    >v3.x 的文档<a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/">在这里</a>。
+    <span class="hidden-sm">Vue 2 已经终止支持且不再维护。</span>
+    <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">请升级到 Vue 3</a>
+    <span class="hidden-sm">或了解有关</span>
+    <span class="only-sm"> | </span>
+    <a href="/eol/">Vue 2 终止支持 (EOL)</a><span class="hidden-sm"> 的信息。</span>
   </div>
 
   <header id="header">
-    <a id="logo" href="/">
-      <img src="/images/logo.svg" alt="vue logo">
+    <a id="logo" href="/vue2-doc/">
+      <img src="/vue2-doc/images/logo.svg" alt="vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -122,11 +116,11 @@
     <li><h4>文档</h4></li>
     <li>
       <ul>
-        <li><a href="/v2/guide/" class="nav-link">教程</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">风格指南</a></li>
-        <li><a href="/v2/examples/" class="nav-link current">示例</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+        <li><a href="/vue2-doc/v2/guide/" class="nav-link">教程</a></li>
+        <li><a href="/vue2-doc/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/vue2-doc/v2/style-guide/" class="nav-link">风格指南</a></li>
+        <li><a href="/vue2-doc/v2/examples/" class="nav-link current">示例</a></li>
+        <li><a href="/vue2-doc/v2/cookbook/" class="nav-link">Cookbook</a></li>
       </ul>
     </li>
     <li><h4>视频教程</h4></li>
@@ -184,45 +178,58 @@
     <li><h4>信息</h4></li>
     <li><ul>
       <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">周刊</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
       <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">活动</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">博客</a></li>
+      <li><a href="https://blog.vuejs.org" class="nav-link" target="_blank" rel="noopener">博客</a></li>
       <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">工作</a></li>
       <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV 社区</a></li>
     </ul></li>
   </ul>
 </li>
 
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
-</li>
 <li class="nav-dropdown-container resources">
   <a href="#" class="nav-link">资源列表</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="/resources/partners.html" class="nav-link">合作伙伴</a></li>
-    <li><a href="/resources/themes.html" class="nav-link">主题</a></li>
-    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
-    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">浏览和 Vue 相关的包</a></li>
+    <li>
+      <a
+        target="_blank" rel="noopener" href="https://cn.vuejs.org/about/team.html"
+        class="nav-link team"
+        >团队</a
+      >
+    </li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://cn.vuejs.org/sponsor/">赞助商</a>
+    </li>
+    <li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/partners/" class="nav-link">合作伙伴</a></li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://cn.vuejs.org/ecosystem/themes.html" class="nav-link"
+        >主题</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/vuejs/awesome-vue"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Awesome Vue</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://awesomejs.dev/for/vue/"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >浏览和 Vue 相关的包</a
+      >
+    </li>
   </ul>
 </li>
 
-<!-- <li>
-  <a href="/partners" class="nav-link ">Partners</a>
-</li> -->
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
-    <!-- start: special logic for cn -->
-    <li><a target="_blank" href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/vue.html" rel="noopener noopener" class="nav-link">贴纸</a></li>
-    <li><a target="_blank" href="https://osholic.com/?utm_source=vue&utm_medium=dropdown" rel="noopener noopener" class="nav-link">周边</a></li>
-    <!-- end: special logic for cn -->
-    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">T 恤商店</a></li>
-  </ul>
+<li>
+  <a href="/eol/" class="badge-parent">终止支持 (EOL)<sup class="badge">新</sup></a>
 </li>
-
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -239,8 +246,7 @@
 </li>
 
 <!-- start: special logic for cn -->
-<!-- TODO: update when v3 becomes the main docsite -->
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
+<li><a href="https://github.com/vuejs/v2.cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 <!-- end: special logic for cn -->
 
     </ul>
@@ -263,37 +269,18 @@
     <span>特别赞助商</span>
     <div>
       <a
-        href="https://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci="
+        href="http://github.crmeb.net/u/vue"
         target="_blank"
         rel="sponsored noopener"
         class="logo"
       >
-        <img id="s-HBuilder" alt="HBuilder" />
+        <img id="s-CRMEB" alt="CRMEB" />
         <script>
           (function(){
-            var el = document.getElementById("s-HBuilder");
-            var adImg = "/images/dcloud1.png";
-            var altImg = "/images/dcloud2.png";
-            var img = "https://sponsors.vuejs.org/images/hbuilder.png";
-            el.src = (altImg && Math.random() >= 0.5 ? altImg : (adImg || img));
-          })()
-        </script>
-      </a>
-    </div>
-    <div>
-      <a
-        href="https://juejin.cn/frontend?utm_source=vue&utm_campaign=sponsor"
-        target="_blank"
-        rel="sponsored noopener"
-        class="logo"
-      >
-        <img id="s-稀土掘金技术社区" alt="稀土掘金技术社区" />
-        <script>
-          (function(){
-            var el = document.getElementById("s-稀土掘金技术社区");
+            var el = document.getElementById("s-CRMEB");
             var adImg = null;
             var altImg = null;
-            var img = "https://sponsors.vuejs.org/images/xitujuejinjishushequ.png";
+            var img = "https://sponsors.vuejs.org/images/crmeb.svg?v2";
             el.src = (altImg && Math.random() >= 0.5 ? altImg : (adImg || img));
           })()
         </script>
@@ -316,36 +303,33 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    <a href="https://vuejs.amsterdam/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vue_js_amsterdam.png" alt="Vue.js Amsterdam">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
-    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
     </a>
-    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    <a href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/herodevs.png" alt="HeroDevs">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    <a href="https://certificates.dev/javascript/?ref=vuejs-sponsor&friend=VUEJS" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/javascript_certification.png?v2" alt="JavaScript Certification">
     </a>
-    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    <a href="https://www.coderabbit.ai?utm_source=github&utm_medium=sponsors&utm_campaign=evan_you_2025" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/coderabbit_.png" alt="CodeRabbit ">
     </a>
-    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    <a href="https://www.aapanel.com?invite_code=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/aapanel.png" alt="aaPanel">
     </a>
-    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
-    </a>
-    <a href="https://conf.vuejs.de/?utm_source=vuejs-vite&utm_medium=referral&utm_campaign=sponsoring" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/vuejs_de_conf.svg" alt="vuejs.de Conf">
+    <a href="https://imagekit.io/?utm_source=vuejs&utm_medium=referral&utm_campaign=oss-sponsorship&utm_content=homepage" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/imagekit_io.svg" alt="ImageKit.io">
     </a>
     </div>
   </div>
-  <a class="become-backer" href="/support-vuejs">
+  <a class="become-backer" href="/vue2-doc/support-vuejs">
     成为赞助者
   </a>
 </div>
@@ -371,73 +355,73 @@
     
     
     <li>
-      <a href="/v2/examples/index.html" class="sidebar-link">Markdown 编辑器</a>
+      <a href="/vue2-doc/v2/examples/index.html" class="sidebar-link">Markdown 编辑器</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/commits.html" class="sidebar-link">GitHub 提交</a>
+      <a href="/vue2-doc/v2/examples/commits.html" class="sidebar-link">GitHub 提交</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/grid-component.html" class="sidebar-link">网格组件</a>
+      <a href="/vue2-doc/v2/examples/grid-component.html" class="sidebar-link">网格组件</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/tree-view.html" class="sidebar-link">树形视图</a>
+      <a href="/vue2-doc/v2/examples/tree-view.html" class="sidebar-link">树形视图</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/svg.html" class="sidebar-link">SVG 图表</a>
+      <a href="/vue2-doc/v2/examples/svg.html" class="sidebar-link">SVG 图表</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/modal.html" class="sidebar-link">模式组件</a>
+      <a href="/vue2-doc/v2/examples/modal.html" class="sidebar-link">模式组件</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/elastic-header.html" class="sidebar-link">具有伸缩性的 Header</a>
+      <a href="/vue2-doc/v2/examples/elastic-header.html" class="sidebar-link">具有伸缩性的 Header</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/select2.html" class="sidebar-link">内嵌组件</a>
+      <a href="/vue2-doc/v2/examples/select2.html" class="sidebar-link">内嵌组件</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/deepstream.html" class="sidebar-link current">实时 deepstreamHub</a>
+      <a href="/vue2-doc/v2/examples/deepstream.html" class="sidebar-link current">实时 deepstreamHub</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/firebase.html" class="sidebar-link">Firebase + 验证</a>
+      <a href="/vue2-doc/v2/examples/firebase.html" class="sidebar-link">Firebase + 验证</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/todomvc.html" class="sidebar-link">TodoMVC</a>
+      <a href="/vue2-doc/v2/examples/todomvc.html" class="sidebar-link">TodoMVC</a>
     </li>
   
     
     
     <li>
-      <a href="/v2/examples/hackernews.html" class="sidebar-link">HackerNews 克隆</a>
+      <a href="/vue2-doc/v2/examples/hackernews.html" class="sidebar-link">HackerNews 克隆</a>
     </li>
   
 </ul>
@@ -461,36 +445,33 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    <a href="https://vuejs.amsterdam/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vue_js_amsterdam.png" alt="Vue.js Amsterdam">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
-    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
     </a>
-    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    <a href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/herodevs.png" alt="HeroDevs">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    <a href="https://certificates.dev/javascript/?ref=vuejs-sponsor&friend=VUEJS" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/javascript_certification.png?v2" alt="JavaScript Certification">
     </a>
-    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    <a href="https://www.coderabbit.ai?utm_source=github&utm_medium=sponsors&utm_campaign=evan_you_2025" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/coderabbit_.png" alt="CodeRabbit ">
     </a>
-    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    <a href="https://www.aapanel.com?invite_code=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/aapanel.png" alt="aaPanel">
     </a>
-    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
-    </a>
-    <a href="https://conf.vuejs.de/?utm_source=vuejs-vite&utm_medium=referral&utm_campaign=sponsoring" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/vuejs_de_conf.svg" alt="vuejs.de Conf">
+    <a href="https://imagekit.io/?utm_source=vuejs&utm_medium=referral&utm_campaign=oss-sponsorship&utm_content=homepage" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/imagekit_io.svg" alt="ImageKit.io">
     </a>
     </div>
   </div>
-  <a class="become-backer" href="/support-vuejs">
+  <a class="become-backer" href="/vue2-doc/support-vuejs">
     成为赞助者
   </a>
 </div>
@@ -501,7 +482,7 @@
 
 <div class="content examples with-sidebar ">
   <p class="tip warning v3-warning">
-    您正在浏览的是 Vue 2.x 的文档。Vue 3 的文档<a href="https://cn.vuejs.org/">在这里</a>。
+    您正在浏览的是 Vue 2.x 的文档。Vue 3 的文档<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">在这里</a>。
   </p>
 
   
@@ -570,8 +551,7 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 
 
     发现错误？想参与编辑？
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/examples/deepstream.md" rel="noopener" target="_blank">
+    <a href="https://github.com/vuejs/v2.cn.vuejs.org/blob/master/src/v2/examples/deepstream.md" rel="noopener" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     <!-- Deployed on
@@ -582,17 +562,17 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </div>
 
       </div>
-      <script src="/js/smooth-scroll.min.js"></script>
+      <script src="/vue2-doc/js/smooth-scroll.min.js"></script>
     
 
     <!-- main custom script for sidebars, version selects etc. -->
-    <script src="/js/css.escape.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="/vue2-doc/js/css.escape.js"></script>
+    <script src="/vue2-doc/js/common.js"></script>
 
     <!-- search -->
     <link href="//code.bdstatic.com/npm/docsearch.js@1.5.0/dist/cdn/docsearch.min.css" rel='stylesheet' type='text/css'>
     
-<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/vue2-doc/css/search.css">
 
     <script src="//code.bdstatic.com/npm/docsearch.js@1.5.0/dist/cdn/docsearch.min.js"></script>
     <script>
@@ -602,15 +582,12 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
       '#search-query-menu'
     ].forEach(function (selector) {
       if (!document.querySelector(selector)) return
-      // search index defaults to v2
-      var match = window.location.pathname.match(/^\/(v\d+)/)
-      var version = match ? match[1] : 'v2'
       docsearch({
-        appId: 'BH4D9OD16A',
-        apiKey: '5638280abff9d207417bb03be05f0b25',
+        appId: 'UURH1MHAF7',
+        apiKey: 'c23eb8e7895f42daeaf2bf6f63eb4bf6',
         indexName: 'vuejs_cn2',
         inputSelector: selector,
-        algoliaOptions: { facetFilters: ["version:" + version] },
+        algoliaOptions: { facetFilters: ["version:v2"]},
         autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })

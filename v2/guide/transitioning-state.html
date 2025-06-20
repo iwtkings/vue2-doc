@@ -3,16 +3,15 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="with-v3-banner">
   <head>
     <title>状态过渡 — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/transitioning-state.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/transitioning-state.html">
+    <link rel="alternate" hreflang="x-default" href="https://v2.vuejs.org/v2/guide/transitioning-state.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/guide/transitioning-state.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/transitioning-state.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/transitioning-state.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/transitioning-state.html">
@@ -23,28 +22,28 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="状态过渡 — Vue.js">
     <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
-    <meta property="og:image" content="https://cn.vuejs.org/images/logo.png">
+    <meta property="og:image" content="https://v2.cn.vuejs.org/images/logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="状态过渡 — Vue.js">
     <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
-    <meta name="twitter:image" content="https://cn.vuejs.org/images/logo.png">
+    <meta name="twitter:image" content="https://v2.cn.vuejs.org/images/logo.png">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/vue2-doc/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/vue2-doc/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/vue2-doc/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/vue2-doc/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/vue2-doc/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/vue2-doc/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/vue2-doc/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/vue2-doc/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/vue2-doc/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/vue2-doc/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/vue2-doc/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/vue2-doc/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/vue2-doc/images/icons/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
-    <link rel="icon" href="/images/logo.svg">
+    <link rel="icon" href="/vue2-doc/images/logo.svg">
 
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -62,11 +61,11 @@
 
     <!-- main page styles -->
     
-<link rel="stylesheet" href="/css/page.css">
+<link rel="stylesheet" href="/vue2-doc/css/page.css">
 
 
     <!-- this needs to be loaded before guide's inline scripts -->
-    <script src="/js/vue.js"></script>
+    <script src="/vue2-doc/js/vue.js"></script>
 
     
 
@@ -75,20 +74,13 @@
       window.PAGE_TYPE = "guide"
     </script>
 
-    <!-- ga -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-46852172-3', 'cn.vuejs.org');
-      ga('send', 'pageview');
-    </script>
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="KTDIHEIJ" defer></script>
+    <!-- / Fathom -->
 
     <!-- vimeo analytics -->
     <!-- <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script> -->
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/vue2-doc/atom.xml" title="Vue.js" type="application/atom+xml">
 </head>
   <body class="docs">
 
@@ -100,14 +92,16 @@
     </div>
     <div>
   <div id="v3-banner">
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <span class="hidden-sm">您在浏览的是 v2.x 及更早版本的文档。</span
-    >v3.x 的文档<a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/">在这里</a>。
+    <span class="hidden-sm">Vue 2 已经终止支持且不再维护。</span>
+    <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">请升级到 Vue 3</a>
+    <span class="hidden-sm">或了解有关</span>
+    <span class="only-sm"> | </span>
+    <a href="/eol/">Vue 2 终止支持 (EOL)</a><span class="hidden-sm"> 的信息。</span>
   </div>
 
   <header id="header">
-    <a id="logo" href="/">
-      <img src="/images/logo.svg" alt="vue logo">
+    <a id="logo" href="/vue2-doc/">
+      <img src="/vue2-doc/images/logo.svg" alt="vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -122,11 +116,11 @@
     <li><h4>文档</h4></li>
     <li>
       <ul>
-        <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">风格指南</a></li>
-        <li><a href="/v2/examples/" class="nav-link">示例</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+        <li><a href="/vue2-doc/v2/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/vue2-doc/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/vue2-doc/v2/style-guide/" class="nav-link">风格指南</a></li>
+        <li><a href="/vue2-doc/v2/examples/" class="nav-link">示例</a></li>
+        <li><a href="/vue2-doc/v2/cookbook/" class="nav-link">Cookbook</a></li>
       </ul>
     </li>
     <li><h4>视频教程</h4></li>
@@ -184,45 +178,58 @@
     <li><h4>信息</h4></li>
     <li><ul>
       <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">周刊</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
       <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">活动</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">博客</a></li>
+      <li><a href="https://blog.vuejs.org" class="nav-link" target="_blank" rel="noopener">博客</a></li>
       <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">工作</a></li>
       <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV 社区</a></li>
     </ul></li>
   </ul>
 </li>
 
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
-</li>
 <li class="nav-dropdown-container resources">
   <a href="#" class="nav-link">资源列表</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="/resources/partners.html" class="nav-link">合作伙伴</a></li>
-    <li><a href="/resources/themes.html" class="nav-link">主题</a></li>
-    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
-    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">浏览和 Vue 相关的包</a></li>
+    <li>
+      <a
+        target="_blank" rel="noopener" href="https://cn.vuejs.org/about/team.html"
+        class="nav-link team"
+        >团队</a
+      >
+    </li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://cn.vuejs.org/sponsor/">赞助商</a>
+    </li>
+    <li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/partners/" class="nav-link">合作伙伴</a></li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://cn.vuejs.org/ecosystem/themes.html" class="nav-link"
+        >主题</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/vuejs/awesome-vue"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Awesome Vue</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://awesomejs.dev/for/vue/"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >浏览和 Vue 相关的包</a
+      >
+    </li>
   </ul>
 </li>
 
-<!-- <li>
-  <a href="/partners" class="nav-link ">Partners</a>
-</li> -->
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
-    <!-- start: special logic for cn -->
-    <li><a target="_blank" href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/vue.html" rel="noopener noopener" class="nav-link">贴纸</a></li>
-    <li><a target="_blank" href="https://osholic.com/?utm_source=vue&utm_medium=dropdown" rel="noopener noopener" class="nav-link">周边</a></li>
-    <!-- end: special logic for cn -->
-    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">T 恤商店</a></li>
-  </ul>
+<li>
+  <a href="/eol/" class="badge-parent">终止支持 (EOL)<sup class="badge">新</sup></a>
 </li>
-
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -239,8 +246,7 @@
 </li>
 
 <!-- start: special logic for cn -->
-<!-- TODO: update when v3 becomes the main docsite -->
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
+<li><a href="https://github.com/vuejs/v2.cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 <!-- end: special logic for cn -->
 
     </ul>
@@ -263,37 +269,18 @@
     <span>特别赞助商</span>
     <div>
       <a
-        href="https://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci="
+        href="http://github.crmeb.net/u/vue"
         target="_blank"
         rel="sponsored noopener"
         class="logo"
       >
-        <img id="s-HBuilder" alt="HBuilder" />
+        <img id="s-CRMEB" alt="CRMEB" />
         <script>
           (function(){
-            var el = document.getElementById("s-HBuilder");
-            var adImg = "/images/dcloud1.png";
-            var altImg = "/images/dcloud2.png";
-            var img = "https://sponsors.vuejs.org/images/hbuilder.png";
-            el.src = (altImg && Math.random() >= 0.5 ? altImg : (adImg || img));
-          })()
-        </script>
-      </a>
-    </div>
-    <div>
-      <a
-        href="https://juejin.cn/frontend?utm_source=vue&utm_campaign=sponsor"
-        target="_blank"
-        rel="sponsored noopener"
-        class="logo"
-      >
-        <img id="s-稀土掘金技术社区" alt="稀土掘金技术社区" />
-        <script>
-          (function(){
-            var el = document.getElementById("s-稀土掘金技术社区");
+            var el = document.getElementById("s-CRMEB");
             var adImg = null;
             var altImg = null;
-            var img = "https://sponsors.vuejs.org/images/xitujuejinjishushequ.png";
+            var img = "https://sponsors.vuejs.org/images/crmeb.svg?v2";
             el.src = (altImg && Math.random() >= 0.5 ? altImg : (adImg || img));
           })()
         </script>
@@ -316,36 +303,33 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    <a href="https://vuejs.amsterdam/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vue_js_amsterdam.png" alt="Vue.js Amsterdam">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
-    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
     </a>
-    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    <a href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/herodevs.png" alt="HeroDevs">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    <a href="https://certificates.dev/javascript/?ref=vuejs-sponsor&friend=VUEJS" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/javascript_certification.png?v2" alt="JavaScript Certification">
     </a>
-    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    <a href="https://www.coderabbit.ai?utm_source=github&utm_medium=sponsors&utm_campaign=evan_you_2025" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/coderabbit_.png" alt="CodeRabbit ">
     </a>
-    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    <a href="https://www.aapanel.com?invite_code=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/aapanel.png" alt="aaPanel">
     </a>
-    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
-    </a>
-    <a href="https://conf.vuejs.de/?utm_source=vuejs-vite&utm_medium=referral&utm_campaign=sponsoring" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/vuejs_de_conf.svg" alt="vuejs.de Conf">
+    <a href="https://imagekit.io/?utm_source=vuejs&utm_medium=referral&utm_campaign=oss-sponsorship&utm_content=homepage" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/imagekit_io.svg" alt="ImageKit.io">
     </a>
     </div>
   </div>
-  <a class="become-backer" href="/support-vuejs">
+  <a class="become-backer" href="/vue2-doc/support-vuejs">
     成为赞助者
   </a>
 </div>
@@ -383,7 +367,7 @@
       
     
     <li>
-      <a href="/v2/guide/installation.html" class="sidebar-link">安装</a>
+      <a href="/vue2-doc/v2/guide/installation.html" class="sidebar-link">安装</a>
     </li>
   
     
@@ -399,7 +383,7 @@
       
     
     <li>
-      <a href="/v2/guide/index.html" class="sidebar-link">介绍</a>
+      <a href="/vue2-doc/v2/guide/index.html" class="sidebar-link">介绍</a>
     </li>
   
     
@@ -415,7 +399,7 @@
       
     
     <li>
-      <a href="/v2/guide/instance.html" class="sidebar-link">Vue 实例</a>
+      <a href="/vue2-doc/v2/guide/instance.html" class="sidebar-link">Vue 实例</a>
     </li>
   
     
@@ -431,7 +415,7 @@
       
     
     <li>
-      <a href="/v2/guide/syntax.html" class="sidebar-link">模板语法</a>
+      <a href="/vue2-doc/v2/guide/syntax.html" class="sidebar-link">模板语法</a>
     </li>
   
     
@@ -447,7 +431,7 @@
       
     
     <li>
-      <a href="/v2/guide/computed.html" class="sidebar-link">计算属性和侦听器</a>
+      <a href="/vue2-doc/v2/guide/computed.html" class="sidebar-link">计算属性和侦听器</a>
     </li>
   
     
@@ -463,7 +447,7 @@
       
     
     <li>
-      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
+      <a href="/vue2-doc/v2/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
     </li>
   
     
@@ -479,7 +463,7 @@
       
     
     <li>
-      <a href="/v2/guide/conditional.html" class="sidebar-link">条件渲染</a>
+      <a href="/vue2-doc/v2/guide/conditional.html" class="sidebar-link">条件渲染</a>
     </li>
   
     
@@ -495,7 +479,7 @@
       
     
     <li>
-      <a href="/v2/guide/list.html" class="sidebar-link">列表渲染</a>
+      <a href="/vue2-doc/v2/guide/list.html" class="sidebar-link">列表渲染</a>
     </li>
   
     
@@ -511,7 +495,7 @@
       
     
     <li>
-      <a href="/v2/guide/events.html" class="sidebar-link">事件处理</a>
+      <a href="/vue2-doc/v2/guide/events.html" class="sidebar-link">事件处理</a>
     </li>
   
     
@@ -527,7 +511,7 @@
       
     
     <li>
-      <a href="/v2/guide/forms.html" class="sidebar-link">表单输入绑定</a>
+      <a href="/vue2-doc/v2/guide/forms.html" class="sidebar-link">表单输入绑定</a>
     </li>
   
     
@@ -543,7 +527,7 @@
       
     
     <li>
-      <a href="/v2/guide/components.html" class="sidebar-link">组件基础</a>
+      <a href="/vue2-doc/v2/guide/components.html" class="sidebar-link">组件基础</a>
     </li>
   
     
@@ -561,7 +545,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-registration.html" class="sidebar-link">组件注册</a>
+      <a href="/vue2-doc/v2/guide/components-registration.html" class="sidebar-link">组件注册</a>
     </li>
   
     
@@ -577,7 +561,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-props.html" class="sidebar-link">Prop</a>
+      <a href="/vue2-doc/v2/guide/components-props.html" class="sidebar-link">Prop</a>
     </li>
   
     
@@ -593,7 +577,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">自定义事件</a>
+      <a href="/vue2-doc/v2/guide/components-custom-events.html" class="sidebar-link">自定义事件</a>
     </li>
   
     
@@ -609,7 +593,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-slots.html" class="sidebar-link">插槽</a>
+      <a href="/vue2-doc/v2/guide/components-slots.html" class="sidebar-link">插槽</a>
     </li>
   
     
@@ -625,7 +609,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">动态组件 & 异步组件</a>
+      <a href="/vue2-doc/v2/guide/components-dynamic-async.html" class="sidebar-link">动态组件 & 异步组件</a>
     </li>
   
     
@@ -641,7 +625,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">处理边界情况</a>
+      <a href="/vue2-doc/v2/guide/components-edge-cases.html" class="sidebar-link">处理边界情况</a>
     </li>
   
     
@@ -659,7 +643,7 @@
       
     
     <li>
-      <a href="/v2/guide/transitions.html" class="sidebar-link">进入/离开 & 列表过渡</a>
+      <a href="/vue2-doc/v2/guide/transitions.html" class="sidebar-link">进入/离开 & 列表过渡</a>
     </li>
   
     
@@ -675,7 +659,7 @@
       
     
     <li>
-      <a href="/v2/guide/transitioning-state.html" class="sidebar-link current">状态过渡</a>
+      <a href="/vue2-doc/v2/guide/transitioning-state.html" class="sidebar-link current">状态过渡</a>
     </li>
   
     
@@ -693,7 +677,7 @@
       
     
     <li>
-      <a href="/v2/guide/mixins.html" class="sidebar-link">混入</a>
+      <a href="/vue2-doc/v2/guide/mixins.html" class="sidebar-link">混入</a>
     </li>
   
     
@@ -709,7 +693,7 @@
       
     
     <li>
-      <a href="/v2/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
+      <a href="/vue2-doc/v2/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
     </li>
   
     
@@ -725,7 +709,7 @@
       
     
     <li>
-      <a href="/v2/guide/render-function.html" class="sidebar-link">渲染函数 & JSX</a>
+      <a href="/vue2-doc/v2/guide/render-function.html" class="sidebar-link">渲染函数 & JSX</a>
     </li>
   
     
@@ -741,7 +725,7 @@
       
     
     <li>
-      <a href="/v2/guide/plugins.html" class="sidebar-link">插件</a>
+      <a href="/vue2-doc/v2/guide/plugins.html" class="sidebar-link">插件</a>
     </li>
   
     
@@ -757,7 +741,7 @@
       
     
     <li>
-      <a href="/v2/guide/filters.html" class="sidebar-link">过滤器</a>
+      <a href="/vue2-doc/v2/guide/filters.html" class="sidebar-link">过滤器</a>
     </li>
   
     
@@ -775,7 +759,7 @@
       
     
     <li>
-      <a href="/v2/guide/single-file-components.html" class="sidebar-link">单文件组件</a>
+      <a href="/vue2-doc/v2/guide/single-file-components.html" class="sidebar-link">单文件组件</a>
     </li>
   
     
@@ -791,7 +775,7 @@
       
     
     <li>
-      <a href="/v2/guide/testing.html" class="sidebar-link">测试</a>
+      <a href="/vue2-doc/v2/guide/testing.html" class="sidebar-link">测试</a>
     </li>
   
     
@@ -807,7 +791,7 @@
       
     
     <li>
-      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 支持</a>
+      <a href="/vue2-doc/v2/guide/typescript.html" class="sidebar-link">TypeScript 支持</a>
     </li>
   
     
@@ -823,7 +807,7 @@
       
     
     <li>
-      <a href="/v2/guide/deployment.html" class="sidebar-link">生产环境部署</a>
+      <a href="/vue2-doc/v2/guide/deployment.html" class="sidebar-link">生产环境部署</a>
     </li>
   
     
@@ -841,7 +825,7 @@
       
     
     <li>
-      <a href="/v2/guide/routing.html" class="sidebar-link">路由</a>
+      <a href="/vue2-doc/v2/guide/routing.html" class="sidebar-link">路由</a>
     </li>
   
     
@@ -857,7 +841,7 @@
       
     
     <li>
-      <a href="/v2/guide/state-management.html" class="sidebar-link">状态管理</a>
+      <a href="/vue2-doc/v2/guide/state-management.html" class="sidebar-link">状态管理</a>
     </li>
   
     
@@ -873,7 +857,7 @@
       
     
     <li>
-      <a href="/v2/guide/ssr.html" class="sidebar-link">服务端渲染</a>
+      <a href="/vue2-doc/v2/guide/ssr.html" class="sidebar-link">服务端渲染</a>
     </li>
   
     
@@ -889,7 +873,7 @@
       
     
     <li>
-      <a href="/v2/guide/security.html" class="sidebar-link">安全</a>
+      <a href="/vue2-doc/v2/guide/security.html" class="sidebar-link">安全</a>
     </li>
   
     
@@ -907,7 +891,7 @@
       
     
     <li>
-      <a href="/v2/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
+      <a href="/vue2-doc/v2/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
     </li>
   
     
@@ -925,7 +909,7 @@
       
     
     <li>
-      <a href="/v2/guide/migration.html" class="sidebar-link">从 Vue 1.x 迁移</a>
+      <a href="/vue2-doc/v2/guide/migration.html" class="sidebar-link">从 Vue 1.x 迁移</a>
     </li>
   
     
@@ -941,7 +925,7 @@
       
     
     <li>
-      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">从 Vue Router 0.7.x 迁移</a>
+      <a href="/vue2-doc/v2/guide/migration-vue-router.html" class="sidebar-link">从 Vue Router 0.7.x 迁移</a>
     </li>
   
     
@@ -957,7 +941,23 @@
       
     
     <li>
-      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">从 Vuex 0.6.x 迁移到 1.0</a>
+      <a href="/vue2-doc/v2/guide/migration-vuex.html" class="sidebar-link">从 Vuex 0.6.x 迁移到 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/vue2-doc/v2/guide/migration-vue-2-7.html" class="sidebar-link">迁移至 Vue 2.7</a>
     </li>
   
     
@@ -975,7 +975,7 @@
       
     
     <li>
-      <a href="/v2/guide/comparison.html" class="sidebar-link">对比其他框架</a>
+      <a href="/vue2-doc/v2/guide/comparison.html" class="sidebar-link">对比其他框架</a>
     </li>
   
     
@@ -991,7 +991,7 @@
       
     
     <li>
-      <a href="/v2/guide/join.html" class="sidebar-link">加入 Vue.js 社区</a>
+      <a href="/vue2-doc/v2/guide/join.html" class="sidebar-link">加入 Vue.js 社区</a>
     </li>
   
     
@@ -1007,7 +1007,7 @@
       
     
     <li>
-      <a href="/v2/guide/team.html" class="sidebar-link">认识团队</a>
+      <a href="/vue2-doc/v2/guide/team.html" class="sidebar-link">认识团队</a>
     </li>
   
 </ul>
@@ -1031,36 +1031,33 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    <a href="https://vuejs.amsterdam/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vue_js_amsterdam.png" alt="Vue.js Amsterdam">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
-    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
     </a>
-    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    <a href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/herodevs.png" alt="HeroDevs">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    <a href="https://certificates.dev/javascript/?ref=vuejs-sponsor&friend=VUEJS" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/javascript_certification.png?v2" alt="JavaScript Certification">
     </a>
-    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    <a href="https://www.coderabbit.ai?utm_source=github&utm_medium=sponsors&utm_campaign=evan_you_2025" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/coderabbit_.png" alt="CodeRabbit ">
     </a>
-    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    <a href="https://www.aapanel.com?invite_code=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/aapanel.png" alt="aaPanel">
     </a>
-    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
-    </a>
-    <a href="https://conf.vuejs.de/?utm_source=vuejs-vite&utm_medium=referral&utm_campaign=sponsoring" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/vuejs_de_conf.svg" alt="vuejs.de Conf">
+    <a href="https://imagekit.io/?utm_source=vuejs&utm_medium=referral&utm_campaign=oss-sponsorship&utm_content=homepage" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/imagekit_io.svg" alt="ImageKit.io">
     </a>
     </div>
   </div>
-  <a class="become-backer" href="/support-vuejs">
+  <a class="become-backer" href="/vue2-doc/support-vuejs">
     成为赞助者
   </a>
 </div>
@@ -1071,7 +1068,7 @@
 
 <div class="content guide with-sidebar transitioning-state-guide">
   <p class="tip warning v3-warning">
-    您正在浏览的是 Vue 2.x 的文档。Vue 3 的文档<a href="https://cn.vuejs.org/">在这里</a>。
+    您正在浏览的是 Vue 2.x 的文档。Vue 3 的文档<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">在这里</a>。
   </p>
 
   
@@ -1158,7 +1155,7 @@ new Vue({
 
 <p>当你把数值更新时，就会触发动画。这个是一个不错的演示，但是对于不能直接像数字一样存储的值，比如 CSS 中的 color 的值，通过下面的例子我们来通过 <a target="_blank" rel="noopener" href="https://github.com/tweenjs/tween.js">Tween.js</a> 和 <a target="_blank" rel="noopener" href="https://github.com/brehaut/color-js">Color.js</a> 实现一个例子：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/tween.js@16.3.4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/color-js@1.0.3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example-7&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;colorQuery&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-on:keyup.enter</span>=<span class="hljs-string">&quot;updateColor&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Enter a color&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;updateColor&quot;</span>&gt;</span>Update<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Preview:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-bind:style</span>=<span class="hljs-string">&quot;&#123; backgroundColor: tweenedCSSColor &#125;&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-7-color-preview&quot;</span></span><br><span class="hljs-tag">  &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; tweenedCSSColor &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Color</span> = net.<span class="hljs-property">brehaut</span>.<span class="hljs-property">Color</span><br><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#example-7&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">colorQuery</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>    <span class="hljs-attr">color</span>: &#123;<br>      <span class="hljs-attr">red</span>: <span class="hljs-number">0</span>,<br>      <span class="hljs-attr">green</span>: <span class="hljs-number">0</span>,<br>      <span class="hljs-attr">blue</span>: <span class="hljs-number">0</span>,<br>      <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span><br>    &#125;,<br>    <span class="hljs-attr">tweenedColor</span>: &#123;&#125;<br>  &#125;,<br>  <span class="hljs-attr">created</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span> = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>(&#123;&#125;, <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span>)<br>  &#125;,<br>  <span class="hljs-attr">watch</span>: &#123;<br>    <span class="hljs-attr">color</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">function</span> <span class="hljs-title function_">animate</span> () &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title function_">update</span>()) &#123;<br>          <span class="hljs-title function_">requestAnimationFrame</span>(animate)<br>        &#125;<br>      &#125;<br><br>      <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title class_">Tween</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>)<br>        .<span class="hljs-title function_">to</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span>, <span class="hljs-number">750</span>)<br>        .<span class="hljs-title function_">start</span>()<br><br>      <span class="hljs-title function_">animate</span>()<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">computed</span>: &#123;<br>    <span class="hljs-attr">tweenedCSSColor</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Color</span>(&#123;<br>        <span class="hljs-attr">red</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">red</span>,<br>        <span class="hljs-attr">green</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">green</span>,<br>        <span class="hljs-attr">blue</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">blue</span>,<br>        <span class="hljs-attr">alpha</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">alpha</span><br>      &#125;).<span class="hljs-title function_">toCSS</span>()<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-attr">updateColor</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Color</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">colorQuery</span>).<span class="hljs-title function_">toRGB</span>()<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">colorQuery</span> = <span class="hljs-string">&#x27;&#x27;</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> <span class="hljs-title class_">Color</span> = net.<span class="hljs-property">brehaut</span>.<span class="hljs-property">Color</span><br><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#example-7&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">colorQuery</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>    <span class="hljs-attr">color</span>: &#123;<br>      <span class="hljs-attr">red</span>: <span class="hljs-number">0</span>,<br>      <span class="hljs-attr">green</span>: <span class="hljs-number">0</span>,<br>      <span class="hljs-attr">blue</span>: <span class="hljs-number">0</span>,<br>      <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span><br>    &#125;,<br>    <span class="hljs-attr">tweenedColor</span>: &#123;&#125;<br>  &#125;,<br>  <span class="hljs-attr">created</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span> = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>(&#123;&#125;, <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span>)<br>  &#125;,<br>  <span class="hljs-attr">watch</span>: &#123;<br>    <span class="hljs-attr">color</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">function</span> <span class="hljs-title function_">animate</span> (<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title function_">update</span>()) &#123;<br>          <span class="hljs-title function_">requestAnimationFrame</span>(animate)<br>        &#125;<br>      &#125;<br><br>      <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title class_">Tween</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>)<br>        .<span class="hljs-title function_">to</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span>, <span class="hljs-number">750</span>)<br>        .<span class="hljs-title function_">start</span>()<br><br>      <span class="hljs-title function_">animate</span>()<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">computed</span>: &#123;<br>    <span class="hljs-attr">tweenedCSSColor</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Color</span>(&#123;<br>        <span class="hljs-attr">red</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">red</span>,<br>        <span class="hljs-attr">green</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">green</span>,<br>        <span class="hljs-attr">blue</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">blue</span>,<br>        <span class="hljs-attr">alpha</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweenedColor</span>.<span class="hljs-property">alpha</span><br>      &#125;).<span class="hljs-title function_">toCSS</span>()<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-attr">updateColor</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Color</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">colorQuery</span>).<span class="hljs-title function_">toRGB</span>()<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">colorQuery</span> = <span class="hljs-string">&#x27;&#x27;</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.example-7-color-preview</span> &#123;<br>  <span class="hljs-attribute">display</span>: inline-block;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
@@ -1369,7 +1366,7 @@ function generatePoints (stats) {
 <p>上述 demo 背后的代码可以通过<a target="_blank" rel="noopener" href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-state-transitions">这个示例</a>进行详阅。</p>
 <h2 id="把过渡放到组件里"><a href="#把过渡放到组件里" class="headerlink" title="把过渡放到组件里"></a>把过渡放到组件里</h2><p>管理太多的状态过渡会很快的增加 Vue 实例或者组件的复杂性，幸好很多的动画可以提取到专用的子组件。我们来将之前的示例改写一下：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/tween.js@16.3.4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.number</span>=<span class="hljs-string">&quot;firstNumber&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span> +<br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.number</span>=<span class="hljs-string">&quot;secondNumber&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span> =<br>  &#123;&#123; result &#125;&#125;<br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">animated-integer</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;firstNumber&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animated-integer</span>&gt;</span> +<br>    <span class="hljs-tag">&lt;<span class="hljs-name">animated-integer</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;secondNumber&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animated-integer</span>&gt;</span> =<br>    <span class="hljs-tag">&lt;<span class="hljs-name">animated-integer</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;result&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animated-integer</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 这种复杂的补间动画逻辑可以被复用</span><br><span class="hljs-comment">// 任何整数都可以执行动画</span><br><span class="hljs-comment">// 组件化使我们的界面十分清晰</span><br><span class="hljs-comment">// 可以支持更多更复杂的动态过渡</span><br><span class="hljs-comment">// 策略。</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;animated-integer&#x27;</span>, &#123;<br>  <span class="hljs-attr">template</span>: <span class="hljs-string">&#x27;&lt;span&gt;&#123;&#123; tweeningValue &#125;&#125;&lt;/span&gt;&#x27;</span>,<br>  <span class="hljs-attr">props</span>: &#123;<br>    <span class="hljs-attr">value</span>: &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-title class_">Number</span>,<br>      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">tweeningValue</span>: <span class="hljs-number">0</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">watch</span>: &#123;<br>    <span class="hljs-attr">value</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">newValue, oldValue</span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">tween</span>(oldValue, newValue)<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">tween</span>(<span class="hljs-number">0</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>)<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-attr">tween</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">startValue, endValue</span>) &#123;<br>      <span class="hljs-keyword">var</span> vm = <span class="hljs-variable language_">this</span><br>      <span class="hljs-keyword">function</span> <span class="hljs-title function_">animate</span> () &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title function_">update</span>()) &#123;<br>          <span class="hljs-title function_">requestAnimationFrame</span>(animate)<br>        &#125;<br>      &#125;<br><br>      <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title class_">Tween</span>(&#123; <span class="hljs-attr">tweeningValue</span>: startValue &#125;)<br>        .<span class="hljs-title function_">to</span>(&#123; <span class="hljs-attr">tweeningValue</span>: endValue &#125;, <span class="hljs-number">500</span>)<br>        .<span class="hljs-title function_">onUpdate</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>          vm.<span class="hljs-property">tweeningValue</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweeningValue</span>.<span class="hljs-title function_">toFixed</span>(<span class="hljs-number">0</span>)<br>        &#125;)<br>        .<span class="hljs-title function_">start</span>()<br><br>      <span class="hljs-title function_">animate</span>()<br>    &#125;<br>  &#125;<br>&#125;)<br><br><span class="hljs-comment">// 所有的复杂度都已经从 Vue 的主实例中移除！</span><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#example-8&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">firstNumber</span>: <span class="hljs-number">20</span>,<br>    <span class="hljs-attr">secondNumber</span>: <span class="hljs-number">40</span><br>  &#125;,<br>  <span class="hljs-attr">computed</span>: &#123;<br>    <span class="hljs-attr">result</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstNumber</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">secondNumber</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 这种复杂的补间动画逻辑可以被复用</span><br><span class="hljs-comment">// 任何整数都可以执行动画</span><br><span class="hljs-comment">// 组件化使我们的界面十分清晰</span><br><span class="hljs-comment">// 可以支持更多更复杂的动态过渡</span><br><span class="hljs-comment">// 策略。</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;animated-integer&#x27;</span>, &#123;<br>  <span class="hljs-attr">template</span>: <span class="hljs-string">&#x27;&lt;span&gt;&#123;&#123; tweeningValue &#125;&#125;&lt;/span&gt;&#x27;</span>,<br>  <span class="hljs-attr">props</span>: &#123;<br>    <span class="hljs-attr">value</span>: &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-title class_">Number</span>,<br>      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">tweeningValue</span>: <span class="hljs-number">0</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">watch</span>: &#123;<br>    <span class="hljs-attr">value</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">newValue, oldValue</span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">tween</span>(oldValue, newValue)<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">tween</span>(<span class="hljs-number">0</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>)<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-attr">tween</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">startValue, endValue</span>) &#123;<br>      <span class="hljs-keyword">var</span> vm = <span class="hljs-variable language_">this</span><br>      <span class="hljs-keyword">function</span> <span class="hljs-title function_">animate</span> (<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title function_">update</span>()) &#123;<br>          <span class="hljs-title function_">requestAnimationFrame</span>(animate)<br>        &#125;<br>      &#125;<br><br>      <span class="hljs-keyword">new</span> <span class="hljs-variable constant_">TWEEN</span>.<span class="hljs-title class_">Tween</span>(&#123; <span class="hljs-attr">tweeningValue</span>: startValue &#125;)<br>        .<span class="hljs-title function_">to</span>(&#123; <span class="hljs-attr">tweeningValue</span>: endValue &#125;, <span class="hljs-number">500</span>)<br>        .<span class="hljs-title function_">onUpdate</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>          vm.<span class="hljs-property">tweeningValue</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">tweeningValue</span>.<span class="hljs-title function_">toFixed</span>(<span class="hljs-number">0</span>)<br>        &#125;)<br>        .<span class="hljs-title function_">start</span>()<br><br>      <span class="hljs-title function_">animate</span>()<br>    &#125;<br>  &#125;<br>&#125;)<br><br><span class="hljs-comment">// 所有的复杂度都已经从 Vue 的主实例中移除！</span><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#example-8&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">firstNumber</span>: <span class="hljs-number">20</span>,<br>    <span class="hljs-attr">secondNumber</span>: <span class="hljs-number">40</span><br>  &#125;,<br>  <span class="hljs-attr">computed</span>: &#123;<br>    <span class="hljs-attr">result</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstNumber</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">secondNumber</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
 <div id="example-8" class="demo">
@@ -1450,11 +1447,11 @@ new Vue({
     <div class="guide-links">
       
       
-        <span>← <a href="/v2/guide/transitions.html">进入/离开 & 列表过渡</a></span>
+        <span>← <a href="/vue2-doc/v2/guide/transitions.html">进入/离开 & 列表过渡</a></span>
       
       
       
-        <span style="float: right;"><a href="/v2/guide/mixins.html">混入</a> →</span>
+        <span style="float: right;"><a href="/vue2-doc/v2/guide/mixins.html">混入</a> →</span>
       
     </div>
   
@@ -1472,8 +1469,7 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 
 
     发现错误？想参与编辑？
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/guide/transitioning-state.md" rel="noopener" target="_blank">
+    <a href="https://github.com/vuejs/v2.cn.vuejs.org/blob/master/src/v2/guide/transitioning-state.md" rel="noopener" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     <!-- Deployed on
@@ -1484,17 +1480,17 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </div>
 
       </div>
-      <script src="/js/smooth-scroll.min.js"></script>
+      <script src="/vue2-doc/js/smooth-scroll.min.js"></script>
     
 
     <!-- main custom script for sidebars, version selects etc. -->
-    <script src="/js/css.escape.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="/vue2-doc/js/css.escape.js"></script>
+    <script src="/vue2-doc/js/common.js"></script>
 
     <!-- search -->
     <link href="//code.bdstatic.com/npm/docsearch.js@1.5.0/dist/cdn/docsearch.min.css" rel='stylesheet' type='text/css'>
     
-<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/vue2-doc/css/search.css">
 
     <script src="//code.bdstatic.com/npm/docsearch.js@1.5.0/dist/cdn/docsearch.min.js"></script>
     <script>
@@ -1504,15 +1500,12 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
       '#search-query-menu'
     ].forEach(function (selector) {
       if (!document.querySelector(selector)) return
-      // search index defaults to v2
-      var match = window.location.pathname.match(/^\/(v\d+)/)
-      var version = match ? match[1] : 'v2'
       docsearch({
-        appId: 'BH4D9OD16A',
-        apiKey: '5638280abff9d207417bb03be05f0b25',
+        appId: 'UURH1MHAF7',
+        apiKey: 'c23eb8e7895f42daeaf2bf6f63eb4bf6',
         indexName: 'vuejs_cn2',
         inputSelector: selector,
-        algoliaOptions: { facetFilters: ["version:" + version] },
+        algoliaOptions: { facetFilters: ["version:v2"]},
         autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })

@@ -220,7 +220,7 @@ body {
   margin: 0;
 }
 body.docs {
-  padding-top: 61px;
+  padding-top: 101px;
 }
 @media screen and (max-width: 900px) {
   body.docs {
@@ -318,7 +318,7 @@ input.button.gray {
 #nav .nav-dropdown {
   display: none;
   box-sizing: border-box;
-  max-height: calc(100vh - 61px);
+  max-height: calc(100vh - 101px);
   overflow-y: auto;
   position: absolute;
   top: 100%;
@@ -424,25 +424,37 @@ sup.beta.beta {
   box-sizing: border-box;
 }
 #v3-banner {
-  background-color: #42b983;
+  background-color: #ffb731;
   min-height: 40px;
   padding: 10px 60px;
   z-index: 19;
   box-sizing: border-box;
   text-align: center;
-  color: #d6ffec;
-  display: none;
+  color: #333;
+  display: block;
 }
 #v3-banner a {
-  color: #fff;
+  color: #34495e;
   font-weight: bold;
+}
+#v3-banner .only-sm {
+  display: none;
+  margin: 0 5px;
 }
 @media screen and (max-width: 900px) {
   #v3-banner .hidden-sm {
     display: none;
   }
+  #v3-banner .only-sm {
+    display: inline;
+  }
 }
 body.docs #header {
+  position: fixed;
+  width: 100%;
+  top: 40px;
+}
+body.docs #v3-banner {
   position: fixed;
   width: 100%;
   top: 0;
@@ -492,6 +504,23 @@ body.docs #header {
   position: absolute;
   top: calc(50% - 1px);
   left: 8px;
+}
+#nav a.badge-parent {
+  padding-right: 26px;
+  position: relative;
+}
+#nav sup.badge {
+  position: absolute;
+  top: -4px;
+  margin-left: 4px;
+  background-color: #42b983;
+  color: #fff;
+  height: 14px;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 3px 4px 0;
 }
 .nav-link {
   padding-bottom: 3px;
@@ -568,6 +597,7 @@ body.docs #header {
   display: none;
   box-shadow: 0 0 2px rgba(0,0,0,0.25);
   pointer-events: none;
+  transition: background-color 0.25s ease-in;
 }
 #mobile-bar > * {
   pointer-events: auto;
@@ -599,7 +629,7 @@ body.docs #header {
 .sidebar {
   position: absolute;
   z-index: 10;
-  top: 61px;
+  top: 101px;
   left: 0;
   bottom: 0;
   overflow-x: hidden;
@@ -720,14 +750,17 @@ body.docs #header {
 #sponsors a {
   margin: 20px 15px 0;
   position: relative;
-}
-#sponsors a,
-#sponsors img {
-  width: 100px;
   display: inline-block;
-  vertical-align: middle;
+}
+#sponsors a.sponsor {
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
 }
 #sponsors img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
   transition: all 0.3s ease;
   filter: grayscale(100%);
   opacity: 0.66;
@@ -740,9 +773,7 @@ body.docs #header {
   display: block;
   margin: 30px auto 15px;
   width: 200px;
-}
-#sponsors a.vip img {
-  width: 200px;
+  height: auto;
 }
 #sponsors .become-sponsor {
   margin-top: 40px;
@@ -779,6 +810,12 @@ body.docs #header {
   padding: 4px 0;
   text-align: center;
   margin: 20px 0 0;
+}
+#special .description {
+  margin: 20px 0;
+}
+#special .description:hover {
+  color: #42b983;
 }
 .modal {
   box-sizing: border-box;
@@ -1039,6 +1076,9 @@ body {
 }
 #special a {
   color: #4f5959;
+  width: 160px;
+  height: 80px;
+  line-height: 80px;
 }
 #special a,
 #special span,
@@ -1047,7 +1087,9 @@ body {
   vertical-align: middle;
 }
 #special img {
-  margin: 15px 10px 0;
+  margin: 15px 0 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 #highlights {
   background-color: #fff;

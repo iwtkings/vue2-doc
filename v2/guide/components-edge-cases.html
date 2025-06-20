@@ -3,16 +3,15 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="with-v3-banner">
   <head>
     <title>处理边界情况 — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-edge-cases.html">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="x-default" href="https://v2.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="zh" href="https://v2.cn.vuejs.org/v2/guide/components-edge-cases.html">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-edge-cases.html">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-edge-cases.html">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-edge-cases.html">
@@ -23,28 +22,28 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="处理边界情况 — Vue.js">
     <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
-    <meta property="og:image" content="https://cn.vuejs.org/images/logo.png">
+    <meta property="og:image" content="https://v2.cn.vuejs.org/images/logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="处理边界情况 — Vue.js">
     <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
-    <meta name="twitter:image" content="https://cn.vuejs.org/images/logo.png">
+    <meta name="twitter:image" content="https://v2.cn.vuejs.org/images/logo.png">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/vue2-doc/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/vue2-doc/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/vue2-doc/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/vue2-doc/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/vue2-doc/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/vue2-doc/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/vue2-doc/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/vue2-doc/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/vue2-doc/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/vue2-doc/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/vue2-doc/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/vue2-doc/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/vue2-doc/images/icons/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
-    <link rel="icon" href="/images/logo.svg">
+    <link rel="icon" href="/vue2-doc/images/logo.svg">
 
     <meta name="msapplication-TileColor" content="#4fc08d">
     <meta name="theme-color" content="#4fc08d">
@@ -62,11 +61,11 @@
 
     <!-- main page styles -->
     
-<link rel="stylesheet" href="/css/page.css">
+<link rel="stylesheet" href="/vue2-doc/css/page.css">
 
 
     <!-- this needs to be loaded before guide's inline scripts -->
-    <script src="/js/vue.js"></script>
+    <script src="/vue2-doc/js/vue.js"></script>
 
     
 
@@ -75,20 +74,13 @@
       window.PAGE_TYPE = "guide"
     </script>
 
-    <!-- ga -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-46852172-3', 'cn.vuejs.org');
-      ga('send', 'pageview');
-    </script>
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="KTDIHEIJ" defer></script>
+    <!-- / Fathom -->
 
     <!-- vimeo analytics -->
     <!-- <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script> -->
-<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/vue2-doc/atom.xml" title="Vue.js" type="application/atom+xml">
 </head>
   <body class="docs">
 
@@ -100,14 +92,16 @@
     </div>
     <div>
   <div id="v3-banner">
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <span class="hidden-sm">您在浏览的是 v2.x 及更早版本的文档。</span
-    >v3.x 的文档<a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/">在这里</a>。
+    <span class="hidden-sm">Vue 2 已经终止支持且不再维护。</span>
+    <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">请升级到 Vue 3</a>
+    <span class="hidden-sm">或了解有关</span>
+    <span class="only-sm"> | </span>
+    <a href="/eol/">Vue 2 终止支持 (EOL)</a><span class="hidden-sm"> 的信息。</span>
   </div>
 
   <header id="header">
-    <a id="logo" href="/">
-      <img src="/images/logo.svg" alt="vue logo">
+    <a id="logo" href="/vue2-doc/">
+      <img src="/vue2-doc/images/logo.svg" alt="vue logo">
       <span>Vue.js</span>
     </a>
     <ul id="nav">
@@ -122,11 +116,11 @@
     <li><h4>文档</h4></li>
     <li>
       <ul>
-        <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-        <li><a href="/v2/api/" class="nav-link">API</a></li>
-        <li><a href="/v2/style-guide/" class="nav-link">风格指南</a></li>
-        <li><a href="/v2/examples/" class="nav-link">示例</a></li>
-        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+        <li><a href="/vue2-doc/v2/guide/" class="nav-link current">教程</a></li>
+        <li><a href="/vue2-doc/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/vue2-doc/v2/style-guide/" class="nav-link">风格指南</a></li>
+        <li><a href="/vue2-doc/v2/examples/" class="nav-link">示例</a></li>
+        <li><a href="/vue2-doc/v2/cookbook/" class="nav-link">Cookbook</a></li>
       </ul>
     </li>
     <li><h4>视频教程</h4></li>
@@ -184,45 +178,58 @@
     <li><h4>信息</h4></li>
     <li><ul>
       <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">周刊</a></li>
-      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
       <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">活动</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">博客</a></li>
+      <li><a href="https://blog.vuejs.org" class="nav-link" target="_blank" rel="noopener">博客</a></li>
       <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">工作</a></li>
       <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV 社区</a></li>
     </ul></li>
   </ul>
 </li>
 
-<li>
-  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
-</li>
 <li class="nav-dropdown-container resources">
   <a href="#" class="nav-link">资源列表</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="/resources/partners.html" class="nav-link">合作伙伴</a></li>
-    <li><a href="/resources/themes.html" class="nav-link">主题</a></li>
-    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
-    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">浏览和 Vue 相关的包</a></li>
+    <li>
+      <a
+        target="_blank" rel="noopener" href="https://cn.vuejs.org/about/team.html"
+        class="nav-link team"
+        >团队</a
+      >
+    </li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://cn.vuejs.org/sponsor/">赞助商</a>
+    </li>
+    <li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/partners/" class="nav-link">合作伙伴</a></li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://cn.vuejs.org/ecosystem/themes.html" class="nav-link"
+        >主题</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/vuejs/awesome-vue"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >Awesome Vue</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://awesomejs.dev/for/vue/"
+        class="nav-link"
+        target="_blank"
+        rel="noopener"
+        >浏览和 Vue 相关的包</a
+      >
+    </li>
   </ul>
 </li>
 
-<!-- <li>
-  <a href="/partners" class="nav-link ">Partners</a>
-</li> -->
-<li class="nav-dropdown-container support-vue">
-  <a href="/support-vuejs/" class="nav-link">支持 Vue</a><span class="arrow"></span>
-  <ul class="nav-dropdown">
-    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">一次性赞助</a></li>
-    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">周期性赞助</a></li>
-    <!-- start: special logic for cn -->
-    <li><a target="_blank" href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/vue.html" rel="noopener noopener" class="nav-link">贴纸</a></li>
-    <li><a target="_blank" href="https://osholic.com/?utm_source=vue&utm_medium=dropdown" rel="noopener noopener" class="nav-link">周边</a></li>
-    <!-- end: special logic for cn -->
-    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">T 恤商店</a></li>
-  </ul>
+<li>
+  <a href="/eol/" class="badge-parent">终止支持 (EOL)<sup class="badge">新</sup></a>
 </li>
-
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -239,8 +246,7 @@
 </li>
 
 <!-- start: special logic for cn -->
-<!-- TODO: update when v3 becomes the main docsite -->
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
+<li><a href="https://github.com/vuejs/v2.cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 <!-- end: special logic for cn -->
 
     </ul>
@@ -263,37 +269,18 @@
     <span>特别赞助商</span>
     <div>
       <a
-        href="https://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci="
+        href="http://github.crmeb.net/u/vue"
         target="_blank"
         rel="sponsored noopener"
         class="logo"
       >
-        <img id="s-HBuilder" alt="HBuilder" />
+        <img id="s-CRMEB" alt="CRMEB" />
         <script>
           (function(){
-            var el = document.getElementById("s-HBuilder");
-            var adImg = "/images/dcloud1.png";
-            var altImg = "/images/dcloud2.png";
-            var img = "https://sponsors.vuejs.org/images/hbuilder.png";
-            el.src = (altImg && Math.random() >= 0.5 ? altImg : (adImg || img));
-          })()
-        </script>
-      </a>
-    </div>
-    <div>
-      <a
-        href="https://juejin.cn/frontend?utm_source=vue&utm_campaign=sponsor"
-        target="_blank"
-        rel="sponsored noopener"
-        class="logo"
-      >
-        <img id="s-稀土掘金技术社区" alt="稀土掘金技术社区" />
-        <script>
-          (function(){
-            var el = document.getElementById("s-稀土掘金技术社区");
+            var el = document.getElementById("s-CRMEB");
             var adImg = null;
             var altImg = null;
-            var img = "https://sponsors.vuejs.org/images/xitujuejinjishushequ.png";
+            var img = "https://sponsors.vuejs.org/images/crmeb.svg?v2";
             el.src = (altImg && Math.random() >= 0.5 ? altImg : (adImg || img));
           })()
         </script>
@@ -316,36 +303,33 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    <a href="https://vuejs.amsterdam/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vue_js_amsterdam.png" alt="Vue.js Amsterdam">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
-    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
     </a>
-    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    <a href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/herodevs.png" alt="HeroDevs">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    <a href="https://certificates.dev/javascript/?ref=vuejs-sponsor&friend=VUEJS" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/javascript_certification.png?v2" alt="JavaScript Certification">
     </a>
-    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    <a href="https://www.coderabbit.ai?utm_source=github&utm_medium=sponsors&utm_campaign=evan_you_2025" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/coderabbit_.png" alt="CodeRabbit ">
     </a>
-    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    <a href="https://www.aapanel.com?invite_code=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/aapanel.png" alt="aaPanel">
     </a>
-    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
-    </a>
-    <a href="https://conf.vuejs.de/?utm_source=vuejs-vite&utm_medium=referral&utm_campaign=sponsoring" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/vuejs_de_conf.svg" alt="vuejs.de Conf">
+    <a href="https://imagekit.io/?utm_source=vuejs&utm_medium=referral&utm_campaign=oss-sponsorship&utm_content=homepage" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/imagekit_io.svg" alt="ImageKit.io">
     </a>
     </div>
   </div>
-  <a class="become-backer" href="/support-vuejs">
+  <a class="become-backer" href="/vue2-doc/support-vuejs">
     成为赞助者
   </a>
 </div>
@@ -383,7 +367,7 @@
       
     
     <li>
-      <a href="/v2/guide/installation.html" class="sidebar-link">安装</a>
+      <a href="/vue2-doc/v2/guide/installation.html" class="sidebar-link">安装</a>
     </li>
   
     
@@ -399,7 +383,7 @@
       
     
     <li>
-      <a href="/v2/guide/index.html" class="sidebar-link">介绍</a>
+      <a href="/vue2-doc/v2/guide/index.html" class="sidebar-link">介绍</a>
     </li>
   
     
@@ -415,7 +399,7 @@
       
     
     <li>
-      <a href="/v2/guide/instance.html" class="sidebar-link">Vue 实例</a>
+      <a href="/vue2-doc/v2/guide/instance.html" class="sidebar-link">Vue 实例</a>
     </li>
   
     
@@ -431,7 +415,7 @@
       
     
     <li>
-      <a href="/v2/guide/syntax.html" class="sidebar-link">模板语法</a>
+      <a href="/vue2-doc/v2/guide/syntax.html" class="sidebar-link">模板语法</a>
     </li>
   
     
@@ -447,7 +431,7 @@
       
     
     <li>
-      <a href="/v2/guide/computed.html" class="sidebar-link">计算属性和侦听器</a>
+      <a href="/vue2-doc/v2/guide/computed.html" class="sidebar-link">计算属性和侦听器</a>
     </li>
   
     
@@ -463,7 +447,7 @@
       
     
     <li>
-      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
+      <a href="/vue2-doc/v2/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
     </li>
   
     
@@ -479,7 +463,7 @@
       
     
     <li>
-      <a href="/v2/guide/conditional.html" class="sidebar-link">条件渲染</a>
+      <a href="/vue2-doc/v2/guide/conditional.html" class="sidebar-link">条件渲染</a>
     </li>
   
     
@@ -495,7 +479,7 @@
       
     
     <li>
-      <a href="/v2/guide/list.html" class="sidebar-link">列表渲染</a>
+      <a href="/vue2-doc/v2/guide/list.html" class="sidebar-link">列表渲染</a>
     </li>
   
     
@@ -511,7 +495,7 @@
       
     
     <li>
-      <a href="/v2/guide/events.html" class="sidebar-link">事件处理</a>
+      <a href="/vue2-doc/v2/guide/events.html" class="sidebar-link">事件处理</a>
     </li>
   
     
@@ -527,7 +511,7 @@
       
     
     <li>
-      <a href="/v2/guide/forms.html" class="sidebar-link">表单输入绑定</a>
+      <a href="/vue2-doc/v2/guide/forms.html" class="sidebar-link">表单输入绑定</a>
     </li>
   
     
@@ -543,7 +527,7 @@
       
     
     <li>
-      <a href="/v2/guide/components.html" class="sidebar-link">组件基础</a>
+      <a href="/vue2-doc/v2/guide/components.html" class="sidebar-link">组件基础</a>
     </li>
   
     
@@ -561,7 +545,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-registration.html" class="sidebar-link">组件注册</a>
+      <a href="/vue2-doc/v2/guide/components-registration.html" class="sidebar-link">组件注册</a>
     </li>
   
     
@@ -577,7 +561,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-props.html" class="sidebar-link">Prop</a>
+      <a href="/vue2-doc/v2/guide/components-props.html" class="sidebar-link">Prop</a>
     </li>
   
     
@@ -593,7 +577,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">自定义事件</a>
+      <a href="/vue2-doc/v2/guide/components-custom-events.html" class="sidebar-link">自定义事件</a>
     </li>
   
     
@@ -609,7 +593,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-slots.html" class="sidebar-link">插槽</a>
+      <a href="/vue2-doc/v2/guide/components-slots.html" class="sidebar-link">插槽</a>
     </li>
   
     
@@ -625,7 +609,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">动态组件 & 异步组件</a>
+      <a href="/vue2-doc/v2/guide/components-dynamic-async.html" class="sidebar-link">动态组件 & 异步组件</a>
     </li>
   
     
@@ -641,7 +625,7 @@
       
     
     <li>
-      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link current">处理边界情况</a>
+      <a href="/vue2-doc/v2/guide/components-edge-cases.html" class="sidebar-link current">处理边界情况</a>
     </li>
   
     
@@ -659,7 +643,7 @@
       
     
     <li>
-      <a href="/v2/guide/transitions.html" class="sidebar-link">进入/离开 & 列表过渡</a>
+      <a href="/vue2-doc/v2/guide/transitions.html" class="sidebar-link">进入/离开 & 列表过渡</a>
     </li>
   
     
@@ -675,7 +659,7 @@
       
     
     <li>
-      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状态过渡</a>
+      <a href="/vue2-doc/v2/guide/transitioning-state.html" class="sidebar-link">状态过渡</a>
     </li>
   
     
@@ -693,7 +677,7 @@
       
     
     <li>
-      <a href="/v2/guide/mixins.html" class="sidebar-link">混入</a>
+      <a href="/vue2-doc/v2/guide/mixins.html" class="sidebar-link">混入</a>
     </li>
   
     
@@ -709,7 +693,7 @@
       
     
     <li>
-      <a href="/v2/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
+      <a href="/vue2-doc/v2/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
     </li>
   
     
@@ -725,7 +709,7 @@
       
     
     <li>
-      <a href="/v2/guide/render-function.html" class="sidebar-link">渲染函数 & JSX</a>
+      <a href="/vue2-doc/v2/guide/render-function.html" class="sidebar-link">渲染函数 & JSX</a>
     </li>
   
     
@@ -741,7 +725,7 @@
       
     
     <li>
-      <a href="/v2/guide/plugins.html" class="sidebar-link">插件</a>
+      <a href="/vue2-doc/v2/guide/plugins.html" class="sidebar-link">插件</a>
     </li>
   
     
@@ -757,7 +741,7 @@
       
     
     <li>
-      <a href="/v2/guide/filters.html" class="sidebar-link">过滤器</a>
+      <a href="/vue2-doc/v2/guide/filters.html" class="sidebar-link">过滤器</a>
     </li>
   
     
@@ -775,7 +759,7 @@
       
     
     <li>
-      <a href="/v2/guide/single-file-components.html" class="sidebar-link">单文件组件</a>
+      <a href="/vue2-doc/v2/guide/single-file-components.html" class="sidebar-link">单文件组件</a>
     </li>
   
     
@@ -791,7 +775,7 @@
       
     
     <li>
-      <a href="/v2/guide/testing.html" class="sidebar-link">测试</a>
+      <a href="/vue2-doc/v2/guide/testing.html" class="sidebar-link">测试</a>
     </li>
   
     
@@ -807,7 +791,7 @@
       
     
     <li>
-      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 支持</a>
+      <a href="/vue2-doc/v2/guide/typescript.html" class="sidebar-link">TypeScript 支持</a>
     </li>
   
     
@@ -823,7 +807,7 @@
       
     
     <li>
-      <a href="/v2/guide/deployment.html" class="sidebar-link">生产环境部署</a>
+      <a href="/vue2-doc/v2/guide/deployment.html" class="sidebar-link">生产环境部署</a>
     </li>
   
     
@@ -841,7 +825,7 @@
       
     
     <li>
-      <a href="/v2/guide/routing.html" class="sidebar-link">路由</a>
+      <a href="/vue2-doc/v2/guide/routing.html" class="sidebar-link">路由</a>
     </li>
   
     
@@ -857,7 +841,7 @@
       
     
     <li>
-      <a href="/v2/guide/state-management.html" class="sidebar-link">状态管理</a>
+      <a href="/vue2-doc/v2/guide/state-management.html" class="sidebar-link">状态管理</a>
     </li>
   
     
@@ -873,7 +857,7 @@
       
     
     <li>
-      <a href="/v2/guide/ssr.html" class="sidebar-link">服务端渲染</a>
+      <a href="/vue2-doc/v2/guide/ssr.html" class="sidebar-link">服务端渲染</a>
     </li>
   
     
@@ -889,7 +873,7 @@
       
     
     <li>
-      <a href="/v2/guide/security.html" class="sidebar-link">安全</a>
+      <a href="/vue2-doc/v2/guide/security.html" class="sidebar-link">安全</a>
     </li>
   
     
@@ -907,7 +891,7 @@
       
     
     <li>
-      <a href="/v2/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
+      <a href="/vue2-doc/v2/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
     </li>
   
     
@@ -925,7 +909,7 @@
       
     
     <li>
-      <a href="/v2/guide/migration.html" class="sidebar-link">从 Vue 1.x 迁移</a>
+      <a href="/vue2-doc/v2/guide/migration.html" class="sidebar-link">从 Vue 1.x 迁移</a>
     </li>
   
     
@@ -941,7 +925,7 @@
       
     
     <li>
-      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">从 Vue Router 0.7.x 迁移</a>
+      <a href="/vue2-doc/v2/guide/migration-vue-router.html" class="sidebar-link">从 Vue Router 0.7.x 迁移</a>
     </li>
   
     
@@ -957,7 +941,23 @@
       
     
     <li>
-      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">从 Vuex 0.6.x 迁移到 1.0</a>
+      <a href="/vue2-doc/v2/guide/migration-vuex.html" class="sidebar-link">从 Vuex 0.6.x 迁移到 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/vue2-doc/v2/guide/migration-vue-2-7.html" class="sidebar-link">迁移至 Vue 2.7</a>
     </li>
   
     
@@ -975,7 +975,7 @@
       
     
     <li>
-      <a href="/v2/guide/comparison.html" class="sidebar-link">对比其他框架</a>
+      <a href="/vue2-doc/v2/guide/comparison.html" class="sidebar-link">对比其他框架</a>
     </li>
   
     
@@ -991,7 +991,7 @@
       
     
     <li>
-      <a href="/v2/guide/join.html" class="sidebar-link">加入 Vue.js 社区</a>
+      <a href="/vue2-doc/v2/guide/join.html" class="sidebar-link">加入 Vue.js 社区</a>
     </li>
   
     
@@ -1007,7 +1007,7 @@
       
     
     <li>
-      <a href="/v2/guide/team.html" class="sidebar-link">认识团队</a>
+      <a href="/vue2-doc/v2/guide/team.html" class="sidebar-link">认识团队</a>
     </li>
   
 </ul>
@@ -1031,36 +1031,33 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    <a href="https://vuejs.amsterdam/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vue_js_amsterdam.png" alt="Vue.js Amsterdam">
     </a>
     <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
       <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
     </a>
-    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    <a href="https://opencollective.com/2021-frameworks-fund" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/chrome_frameworks_fund.png" alt="Chrome Frameworks Fund">
     </a>
-    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    <a href="https://www.herodevs.com/support/vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/herodevs.png" alt="HeroDevs">
     </a>
-    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    <a href="https://certificates.dev/javascript/?ref=vuejs-sponsor&friend=VUEJS" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/javascript_certification.png?v2" alt="JavaScript Certification">
     </a>
-    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    <a href="https://www.coderabbit.ai?utm_source=github&utm_medium=sponsors&utm_campaign=evan_you_2025" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/coderabbit_.png" alt="CodeRabbit ">
     </a>
-    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    <a href="https://www.aapanel.com?invite_code=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/aapanel.png" alt="aaPanel">
     </a>
-    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
-    </a>
-    <a href="https://conf.vuejs.de/?utm_source=vuejs-vite&utm_medium=referral&utm_campaign=sponsoring" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="https://sponsors.vuejs.org/images/vuejs_de_conf.svg" alt="vuejs.de Conf">
+    <a href="https://imagekit.io/?utm_source=vuejs&utm_medium=referral&utm_campaign=oss-sponsorship&utm_content=homepage" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/imagekit_io.svg" alt="ImageKit.io">
     </a>
     </div>
   </div>
-  <a class="become-backer" href="/support-vuejs">
+  <a class="become-backer" href="/vue2-doc/support-vuejs">
     成为赞助者
   </a>
 </div>
@@ -1071,7 +1068,7 @@
 
 <div class="content guide with-sidebar components-edge-cases-guide">
   <p class="tip warning v3-warning">
-    您正在浏览的是 Vue 2.x 的文档。Vue 3 的文档<a href="https://cn.vuejs.org/">在这里</a>。
+    您正在浏览的是 Vue 2.x 的文档。Vue 3 的文档<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">在这里</a>。
   </p>
 
   
@@ -1170,8 +1167,7 @@
 </ul>
 <p class="tip">然而，依赖注入还是有负面影响的。它将你应用程序中的组件与它们当前的组织方式耦合起来，使重构变得更加困难。同时所提供的 property 是非响应式的。这是出于设计的考虑，因为使用它们来创建一个中心化规模化的数据跟<a href="#访问根实例">使用 <code>$root</code></a>做这件事都是不够好的。如果你想要共享的这个 property 是你的应用特有的，而不是通用化的，或者如果你想在祖先组件中更新所提供的数据，那么这意味着你可能需要换用一个像 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vuex">Vuex</a> 这样真正的状态管理方案了。</p>
 
-<!-- TODO: update when v3 becomes the main docsite -->
-<p>你可以在 <a href="https://cn.vuejs.org/v2/api/#provide-inject">API 参考文档</a>学习更多关于依赖注入的知识。</p>
+<p>你可以在 <a href="/v2/api/#provide-inject">API 参考文档</a>学习更多关于依赖注入的知识。</p>
 <h2 id="程序化的事件侦听器"><a href="#程序化的事件侦听器" class="headerlink" title="程序化的事件侦听器"></a>程序化的事件侦听器</h2><p>现在，你已经知道了 <code>$emit</code> 的用法，它可以被 <code>v-on</code> 侦听，但是 Vue 实例同时在其事件接口中提供了其它的方法。我们可以：</p>
 <ul>
 <li>通过 <code>$on(eventName, eventHandler)</code> 侦听一个事件</li>
@@ -1190,8 +1186,7 @@
 <p>使用了这个策略，我甚至可以让多个输入框元素同时使用不同的 Pikaday，每个新的实例都程序化地在后期清理它自己：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">attachDatepicker</span>(<span class="hljs-string">&#x27;startDateInput&#x27;</span>)<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">attachDatepicker</span>(<span class="hljs-string">&#x27;endDateInput&#x27;</span>)<br>&#125;,<br><span class="hljs-attr">methods</span>: &#123;<br>  <span class="hljs-attr">attachDatepicker</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">refName</span>) &#123;<br>    <span class="hljs-keyword">var</span> picker = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pikaday</span>(&#123;<br>      <span class="hljs-attr">field</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>[refName],<br>      <span class="hljs-attr">format</span>: <span class="hljs-string">&#x27;YYYY-MM-DD&#x27;</span><br>    &#125;)<br><br>    <span class="hljs-variable language_">this</span>.$once(<span class="hljs-string">&#x27;hook:beforeDestroy&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      picker.<span class="hljs-title function_">destroy</span>()<br>    &#125;)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>查阅<a target="_blank" rel="noopener" href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-programmatic-event-listeners">这个示例</a>可以了解到完整的代码。注意，即便如此，如果你发现自己不得不在单个组件里做很多建立和清理的工作，最好的方式通常还是创建更多的模块化组件。在这个例子中，我们推荐创建一个可复用的 <code>&lt;input-datepicker&gt;</code> 组件。</p>
-<!-- TODO: update when v3 becomes the main docsite -->
-<p>想了解更多程序化侦听器的内容，请查阅<a href="https://cn.vuejs.org/v2/api/#实例方法-事件">实例方法 / 事件</a>相关的 API。</p>
+<p>想了解更多程序化侦听器的内容，请查阅<a href="/v2/api/#实例方法-事件">实例方法 / 事件</a>相关的 API。</p>
 <p class="tip">注意 Vue 的事件系统不同于浏览器的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget">EventTarget API</a>。尽管它们工作起来是相似的，但是 <code>$emit</code>、<code>$on</code>, 和 <code>$off</code> 并不是 <code>dispatchEvent</code>、<code>addEventListener</code> 和 <code>removeEventListener</code> 的别名。</p>
 
 <h2 id="循环引用"><a href="#循环引用" class="headerlink" title="循环引用"></a>循环引用</h2><h3 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h3><p>组件是可以在它们自己的模板中调用自身的。不过它们只能通过 <code>name</code> 选项来做这件事：</p>
@@ -1212,7 +1207,7 @@
 <p>在我们的例子中，把 <code>&lt;tree-folder&gt;</code> 组件设为了那个点。我们知道那个产生悖论的子组件是 <code>&lt;tree-folder-contents&gt;</code> 组件，所以我们会等到生命周期钩子 <code>beforeCreate</code> 时去注册它：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">beforeCreate</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">$options</span>.<span class="hljs-property">components</span>.<span class="hljs-property">TreeFolderContents</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./tree-folder-contents.vue&#x27;</span>).<span class="hljs-property">default</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <p>或者，在本地注册组件的时候，你可以使用 webpack 的异步 <code>import</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">components</span>: &#123;<br>  <span class="hljs-title class_">TreeFolderContents</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">import</span>(<span class="hljs-string">&#x27;./tree-folder-contents.vue&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">components</span>: &#123;<br>  <span class="hljs-title class_">TreeFolderContents</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;./tree-folder-contents.vue&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>这样问题就解决了！</p>
 <h2 id="模板定义的替代品"><a href="#模板定义的替代品" class="headerlink" title="模板定义的替代品"></a>模板定义的替代品</h2><h3 id="内联模板"><a href="#内联模板" class="headerlink" title="内联模板"></a>内联模板</h3><p>当 <code>inline-template</code> 这个特殊的 attribute 出现在一个子组件上时，这个组件将会使用其里面的内容作为模板，而不是将其作为被分发的内容。这使得模板的撰写工作更加灵活。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">inline-template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>These are compiled as the component&#x27;s own template.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Not parent&#x27;s transclusion content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -1228,8 +1223,7 @@
 <h2 id="控制更新"><a href="#控制更新" class="headerlink" title="控制更新"></a>控制更新</h2><p>感谢 Vue 的响应式系统，它始终知道何时进行更新 (如果你用对了的话)。不过还是有一些边界情况，你想要强制更新，尽管表面上看响应式的数据没有发生改变。也有一些情况是你想阻止不必要的更新。</p>
 <h3 id="强制更新"><a href="#强制更新" class="headerlink" title="强制更新"></a>强制更新</h3><p class="tip">如果你发现你自己需要在 Vue 中做一次强制更新，99.9% 的情况，是你在某个地方做错了事。</p>
 
-<!-- TODO: update when v3 becomes the main docsite -->
-<p>你可能还没有留意到<a href="https://cn.vuejs.org/v2/guide/list.html#注意事项">数组</a>或<a href="https://cn.vuejs.org/v2/guide/list.html#对象变更检测注意事项">对象</a>的变更检测注意事项，或者你可能依赖了一个未被 Vue 的响应式系统追踪的状态。</p>
+<p>你可能还没有留意到<a href="/v2/guide/list.html#注意事项">数组</a>或<a href="/v2/guide/list.html#对象变更检测注意事项">对象</a>的变更检测注意事项，或者你可能依赖了一个未被 Vue 的响应式系统追踪的状态。</p>
 <p>然而，如果你已经做到了上述的事项仍然发现在极少数的情况下需要手动强制更新，那么你可以通过 <a href="../api/#vm-forceUpdate"><code>$forceUpdate</code></a> 来做这件事。</p>
 <h3 id="通过-v-once-创建低开销的静态组件"><a href="#通过-v-once-创建低开销的静态组件" class="headerlink" title="通过 v-once 创建低开销的静态组件"></a>通过 <code>v-once</code> 创建低开销的静态组件</h3><p>渲染普通的 HTML 元素在 Vue 中是非常快速的，但有的时候你可能有一个组件，这个组件包含了<strong>大量</strong>静态内容。在这种情况下，你可以在根元素上添加 <code>v-once</code> attribute 以确保这些内容只计算一次然后缓存起来，就像这样：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;terms-of-service&#x27;</span>, &#123;<br>  <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div v-once&gt;</span><br><span class="hljs-string">      &lt;h1&gt;Terms of Service&lt;/h1&gt;</span><br><span class="hljs-string">      ... a lot of static content ...</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">  `</span><br>&#125;)<br></code></pre></td></tr></table></figure>
@@ -1240,11 +1234,11 @@
     <div class="guide-links">
       
       
-        <span>← <a href="/v2/guide/components-dynamic-async.html">动态组件 & 异步组件</a></span>
+        <span>← <a href="/vue2-doc/v2/guide/components-dynamic-async.html">动态组件 & 异步组件</a></span>
       
       
       
-        <span style="float: right;"><a href="/v2/guide/transitions.html">进入/离开 & 列表过渡</a> →</span>
+        <span style="float: right;"><a href="/vue2-doc/v2/guide/transitions.html">进入/离开 & 列表过渡</a> →</span>
       
     </div>
   
@@ -1262,8 +1256,7 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 
 
     发现错误？想参与编辑？
-    <!-- TODO: update when v3 becomes the main docsite -->
-    <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/guide/components-edge-cases.md" rel="noopener" target="_blank">
+    <a href="https://github.com/vuejs/v2.cn.vuejs.org/blob/master/src/v2/guide/components-edge-cases.md" rel="noopener" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     <!-- Deployed on
@@ -1274,17 +1267,17 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
 </div>
 
       </div>
-      <script src="/js/smooth-scroll.min.js"></script>
+      <script src="/vue2-doc/js/smooth-scroll.min.js"></script>
     
 
     <!-- main custom script for sidebars, version selects etc. -->
-    <script src="/js/css.escape.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="/vue2-doc/js/css.escape.js"></script>
+    <script src="/vue2-doc/js/common.js"></script>
 
     <!-- search -->
     <link href="//code.bdstatic.com/npm/docsearch.js@1.5.0/dist/cdn/docsearch.min.css" rel='stylesheet' type='text/css'>
     
-<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/vue2-doc/css/search.css">
 
     <script src="//code.bdstatic.com/npm/docsearch.js@1.5.0/dist/cdn/docsearch.min.js"></script>
     <script>
@@ -1294,15 +1287,12 @@ _bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
       '#search-query-menu'
     ].forEach(function (selector) {
       if (!document.querySelector(selector)) return
-      // search index defaults to v2
-      var match = window.location.pathname.match(/^\/(v\d+)/)
-      var version = match ? match[1] : 'v2'
       docsearch({
-        appId: 'BH4D9OD16A',
-        apiKey: '5638280abff9d207417bb03be05f0b25',
+        appId: 'UURH1MHAF7',
+        apiKey: 'c23eb8e7895f42daeaf2bf6f63eb4bf6',
         indexName: 'vuejs_cn2',
         inputSelector: selector,
-        algoliaOptions: { facetFilters: ["version:" + version] },
+        algoliaOptions: { facetFilters: ["version:v2"]},
         autocompleteOptions: { hint: false, appendTo: 'body'}
       })
     })
