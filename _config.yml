@@ -13,7 +13,7 @@ language: zh-CN
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://v2.cn.vuejs.org
-root: /
+root: /vue2-doc/
 permalink: :year/:month/:day/:title/
 tag_dir: tags
 archive_dir: archives
@@ -80,7 +80,7 @@ disqus_shortname:
 
 # Include/Exclude Files/Folders
 exclude:
-## Exclude example code from Nunjucks
+  ## Exclude example code from Nunjucks
   - "v2/examples/vue-20-*/*"
 
 # Extensions
