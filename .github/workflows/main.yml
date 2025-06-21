@@ -25,21 +25,28 @@ jobs:
       - name: 构建
         run: npm run build
 
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
+      # - name: Upload artifact
+      #   # Automatically uploads an artifact from the './_site' directory by default
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: ./public
 
-  # Deploy job
-  deploy:
-    needs: build # 依赖 build 完成
-    runs-on: ubuntu-latest
-
-    steps:
       - name: 部署
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
+
+  # # Deploy job
+  # deploy:
+  #   needs: build # 依赖 build 完成
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: 部署
+  #       uses: peaceiris/actions-gh-pages@v4
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./public
+  #         publish_branch: gh-pages
