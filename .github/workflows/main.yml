@@ -27,6 +27,7 @@ jobs:
 
   # Deploy job
   deploy:
+    needs: build # 依赖 build 完成
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
