@@ -25,11 +25,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
+      # - name: Upload artifact
+      #   # Automatically uploads an artifact from the './_site' directory by default
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: ./public
 
   # Deploy job
   deploy:
@@ -38,8 +38,16 @@ jobs:
 
     steps:
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        # uses: peaceiris/actions-gh-pages@v4
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        #   publish_dir: ./public
+        #   publish_branch: gh-pages
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
