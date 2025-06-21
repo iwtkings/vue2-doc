@@ -25,10 +25,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v3
+
   # Deploy job
   deploy:
     needs: build # 依赖 build 完成
     runs-on: ubuntu-latest
+
     steps:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
