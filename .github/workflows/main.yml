@@ -11,25 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: 切换分支
         uses: actions/checkout@v4
 
-      - name: Setup Node.js environment
+      - name: 设置 Node.js 环境
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: npm install
 
-      - name: Build
+      - name: 构建
         run: npm run build
 
-      # - name: Upload artifact
-      #   # Automatically uploads an artifact from the './_site' directory by default
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: ./public
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
   # Deploy job
   deploy:
@@ -37,17 +37,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy
-        # uses: peaceiris/actions-gh-pages@v4
-        # with:
-        #   github_token: ${{ secrets.GITHUB_TOKEN }}
-        #   publish_dir: ./public
-        #   publish_branch: gh-pages
-        uses: crazy-max/ghaction-github-pages@v4
+      - name: 部署
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: public
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
