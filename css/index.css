@@ -452,6 +452,7 @@ sup.beta.beta {
 body.docs #header {
   position: fixed;
   width: 100%;
+  top: 40px;
 }
 body.docs #v3-banner {
   position: fixed;
